@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PODA: Prompt-driven Zero-shot Domain Adaptation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        .novel-depth-imgs {
+            margin-top:16px
+        }
+        .arrow {
+            right: -8px!important
+        }
+        .rgbs {
+            width: 38%;
+            padding:1px
+        }
+        .novel-depth-item {
+            padding-bottom: 4px;
+        }
+        .bottom-three {
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+  <body>
+    <div class="container">
+        <h3 class="text-center display-6 mt-5">PODA: Prompt-driven Zero-shot Domain Adaptation</h3>
+        <div class="row mt-4">   
+            <ul class="list-inline text-center">
+                <li class="list-inline-item"><a href="https://mfahes.github.io/">Mohammad Fahes</a></li>
+                <li class="list-inline-item"><a href="https://tuanhungvu.github.io/">Tuan-Hung Vu</a></li>
+                <li class="list-inline-item"><a href="https://abursuc.github.io/">Andrei Bursuc</a></li>
+                <li class="list-inline-item"><a href="https://ptrckprz.github.io/">Patrick Pérez</a></li>
+                <li class="list-inline-item"><a href="https://team.inria.fr/rits/membres/raoul-de-charette/">Raoul de Charette</a></li>
+            </ul>
+            <div class="text-center">
+                <a href="https://www.inria.fr/en">
+                    <img src="imgs/inr_logo_rouge.png" class="img-fluid" style="width: 150px;" alt="Inria logo">
+                </a>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <a href="https://www.valeo.com/en/valeo-ai/">
+                    <img src="imgs/valeoai_logo.png" class="img-fluid" style="width: 150px;" alt="Inria logo">
+                </a>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-6 mx-auto">
+                <ul class="nav nav-justified">
+                    <li class="nav-item">
+                        <a href="">
+                        <img src="imgs/paper_icon_PODA.png" height="80px">
+                            <p>Paper (arxiv)</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://github.com/astra-vision/PODA">
+                        <img src="imgs/github.png" height="80px">
+                            <p>Code</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+
+        <div class="row px-5 mb-5">
+            <h3 class="text-center">Abstract</h3>
+            <p class="col-md-8 mx-auto" style="text-align: justify;">
+            Domain adaptation has been vastly investigated in computer vision but still requires access to target images at train time, which might be intractable
+            in some conditions, especially for long-tail samples. In this paper, we propose the task of 'Prompt-driven Zero-shot Domain Adaptation', where we adapt
+            a model trained on a source domain using only a general textual description of the target domain, i.e., a prompt. First, we leverage a pretrained
+            contrastive vision-language model (CLIP) to optimize affine transformations of source features, bringing them closer to target text embeddings,
+            while preserving their content and semantics. Second, we show that augmented features can be used to perform zero-shot domain adaptation for semantic
+            segmentation. Experiments demonstrate that our method significantly outperforms CLIP-based style transfer baselines on several datasets for the downstream
+            task at hand. Our prompt-driven approach even outperforms one-shot unsupervised domain adaptation on some datasets, and gives comparable results on others.
+            </p>
+        </div>
+        
+        <div class="row mb-5">
+            <h3>Overview of PODA</h3>
+            <img src="imgs/teaser.png" class="rounded img-fluid img-thumbnail">          
+            <p class="bottom-three"></p>
+            <div style="text-align: justify;">
+                
+                <b>(Left)</b> PODA leverages frozen CLIP image encoder and a single textual prompt of an unseen
+                target domain to optimize affine transformations of low-level features.
+                <b>(Middle)</b> Zero-shot domain adaptation is achieved by finetuning a segmenter model (M)
+                on the feature-augmented source domain with our optimized transformations.
+                <b>(Right)</b> This enables inference on unseen domains.
+        
+            </div>           
+        </div>
+
+        <div class="row mb-5">
+            <h3>PODA's qualitative results on unseen youtube videos</h3>
+            <div class="ratio ratio-16x9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FCxgvNPX0yk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>   
+        
+        <div class="row mb-5">  
+            <h3>Citation</h3>   
+            <div>
+                    If you find this project useful for your research, please cite
+                    <div class="card-block" style="background-color: #f5f5f5; padding:8px;">
+                        <!-- <div class="card-text" style="text-align: left;background-color: #f5f5f5;">                                                 -->
+<pre class="card-text" style="text-align: left;">
+@article{fahes2022poda,
+    author    = {Fahes, Mohammad and Vu, Tuan-Hung and Bursuc, Andrei and P{\'e}rez, Patrick and de Charette, Raoul},
+    title     = {PODA: Prompt-driven Zero-shot Domain Adaptation},
+    publisher = {arxiv},
+    year      = {2022},
+}
+</pre>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <h3>Acknowledgements</h3>
+            <div>This work was partially funded by French project SIGHT (ANR-20-CE23-0016).</div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f790f706b7.js" crossorigin="anonymous"></script>
+    </body>
+</html>
