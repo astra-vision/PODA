@@ -1,0 +1,16 @@
+name: poda_env
+dependencies:
+  - python
+  - pytorch
+  - numpy
+  - matplotlib
+  - pillow
+  - scikit-learn
+  - torchvision
+  - pip
+  - pip:
+    - pickle5
+    - tqdm
+    - ftfy 
+    - regex
+    - git+https://github.com/openai/CLIP.git
