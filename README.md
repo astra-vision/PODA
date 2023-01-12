@@ -1,4 +1,4 @@
-# PODA: Prompt-driven Zero-shot Domain Adaptation
+# PØDA: Prompt-driven Zero-shot Domain Adaptation
 [Mohammad Fahes<sup>1</sup>](https://mfahes.github.io/),
 [Tuan-Hung Vu<sup>1,2</sup>](https://tuanhungvu.github.io/),
 [Andrei Bursuc<sup>1,2</sup>](https://abursuc.github.io/),
@@ -8,8 +8,9 @@
 
 <sup>2</sup> valeo.ai, Paris, France.<br>
 
-TL; DR: PODA is a simple feature augmentation method for zero-shot domain adaptation guided by a single textual description of the target domain.
+TL; DR: PØDA (or PODA) is a simple feature augmentation method for zero-shot domain adaptation guided by a single textual description of the target domain.
 
+Project page: https://astra-vision.github.io/PODA/  
 Paper: https://arxiv.org/abs/2212.03241
 
 ## Citation
@@ -23,7 +24,7 @@ Paper: https://arxiv.org/abs/2212.03241
 ```
 # Overview
 <p align="center">
-  <b>Overview of PODA</b>
+  <b>Overview of PØDA</b>
 </p>
 <p align="center">
   <img src="./teaser/teaser.png/" style="width:100%"/>
