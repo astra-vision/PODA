@@ -61,7 +61,7 @@ Paper: https://arxiv.org/abs/2212.03241
   - [Evaluation](#evaluation)
 - [Inference & Visualization](#inference--visualization)
 - [Qualitative Results](#qualitative-results)
-- [PØDA for Object Detection](#poda-for-object-detection)
+- [PØDA for Object Detection](#pØda-for-object-detection)
 - [License](#license)
 - [Acknowledgement](#acknowledgement)
 
