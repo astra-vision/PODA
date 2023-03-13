@@ -54,7 +54,7 @@ Paper: https://arxiv.org/abs/2212.03241
   - [Dependencies](#dependencies)
   - [Datasets](#datasets)
   - [Pretrained models](#pretrained-models)
-- [Running PØDA](#running-poda)
+- [Running PØDA](#running-pØda)
   - [Source training](#source-training)
   - [Feature optimization](#feature-optimization)
   - [Model adaptation](#model-adaptation)
