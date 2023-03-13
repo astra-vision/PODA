@@ -27,7 +27,7 @@ Paper: https://arxiv.org/abs/2212.03241
   <b>Overview of PØDA</b>
 </p>
 <p align="center">
-  <img src="./teaser/teaser.png/" style="width:100%"/>
+  <img src="./images/teaser.png/" style="width:100%"/>
 </p>
 
 # Method
@@ -35,7 +35,7 @@ Paper: https://arxiv.org/abs/2212.03241
   <b>Optimizing AdaIN layer based on "feature/target domain description" similarity</b>
 </p>
 <p align="center">
-  <img src="./teaser/method.png/" style="width:80%"/>
+  <img src="./images/method.png/" style="width:80%"/>
 </p>
 
 # Teaser
@@ -46,7 +46,7 @@ Paper: https://arxiv.org/abs/2212.03241
   </b>
 </p>
 <p align="center">
-  <img src="./teaser/night_video.gif" style="width:100%"/>
+  <img src="./images/night_video.gif" style="width:100%"/>
 </p>
 
 # Table of Content
@@ -54,12 +54,14 @@ Paper: https://arxiv.org/abs/2212.03241
   - [Dependencies](#dependencies)
   - [Datasets](#datasets)
   - [Pretrained models](#pretrained-models)
-- [Running PODA](#running-poda)
+- [Running PØDA](#running-poda)
   - [Source training](#source-training)
   - [Feature optimization](#feature-optimization)
   - [Model adaptation](#model-adaptation)
   - [Evaluation](#evaluation)
 - [Inference & Visualization](#inference--visualization)
+- [Qualitative Results](#qualitative-results)
+- [PØDA for Object Detection](#poda-for-object-detection)
 - [License](#license)
 - [Acknowledgement](#acknowledgement)
 
@@ -103,7 +105,7 @@ conda activate poda_env
 ## Pretrained models
 The source-only pretrained models are available [here](https://drive.google.com/drive/folders/15-NhVItiVbplg_If3HJibokJssu1NoxL?usp=share_link)
 
-# Running PODA
+# Running PØDA
 
 ## Source training
 ```
@@ -141,8 +143,7 @@ python3 main.py \
 --freeze_BB \
 --train_aug \
 --total_itrs 2000 \ 
---path_mu_sig <path_to_augmented_statistics> \
---mix <put_if_style_mixing>
+--path_mu_sig <path_to_augmented_statistics>
 ```
 
 ## Evaluation
@@ -164,12 +165,26 @@ python3 predict.py \
 --save_val_results_to <directory_for_saved_output_images>
 ```
 
+# Qualitative Results
+<p align="center">
+  <b>PØDA for uncommon driving situations</b>
+</p>
+<p align="center">
+  <img src="./images/uncommon.png/" style="width:75%"/>
+</p>
+
+# PØDA for Object Detection
+Our feature augmentation is task-agnostic, as it operates on the feature extractor's level. We show some preliminary results of PØDA for object detection. The metric is mAP%
+<p align="center">
+  <img src="./images/PODA_for_OD.png/" style="width:75%"/>
+</p>
+
 # License
-PODA is released under the [Apache 2.0 license](./LICENSE).
+PØDA is released under the [Apache 2.0 license](./LICENSE).
 
 # Acknowledgement
 The code is based on this implementation of [DeepLabv3+](https://github.com/VainF/DeepLabV3Plus-Pytorch), and uses code from [CLIP](https://github.com/mfahes/CLIP)
 
 ---
 
-[↑ back to top](#poda-prompt-driven-zero-shot-domain-adaptation)
+[↑ back to top](#pØda-prompt-driven-zero-shot-domain-adaptation)
