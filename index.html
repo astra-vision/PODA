@@ -33,6 +33,9 @@
         .bottom-three {
             margin-bottom: 16px;
         }
+        .bottom-one {
+            margin-bottom: 2px;
+        }
     </style>
 </head>
   <body>
@@ -81,7 +84,7 @@
 
         <div class="row px-5 mb-5">
             <h3 class="text-center">Abstract</h3>
-            <p class="col-md-8 mx-auto" style="text-align: justify;">
+            <p class="col-md-8 mx-auto" style="text-align: justify;">    
             Domain adaptation has been vastly investigated in computer vision but still requires access to target images at train time, which might be intractable
             in some uncommon conditions. In this paper, we propose the task of 'Prompt-driven Zero-shot Domain Adaptation', where we adapt
             a model trained on a source domain using only a general textual description of the target domain, i.e., a prompt. First, we leverage a pretrained
@@ -93,40 +96,59 @@
         </div>
         
         <div class="row mb-5">
-            <h3>Overview of PODA</h3>
-            <img src="imgs/teaser.png" class="rounded img-fluid img-thumbnail">          
-            <p class="bottom-three"></p>
+            <h3 class="text-center">Overview of PØDA</h3>
             <div style="text-align: justify;">
-                
-                <b>(Left)</b> PODA leverages frozen CLIP image encoder and a single textual prompt of an unseen
+                <p class="col-md-8 mx-auto" style="text-align: justify;">
+                <b>(Left)</b> PØDA leverages frozen CLIP image encoder and a single textual prompt of an unseen
                 target domain to optimize affine transformations of low-level features.
                 <b>(Middle)</b> Zero-shot domain adaptation is achieved by finetuning a segmenter model (M)
                 on the feature-augmented source domain with our optimized transformations.
                 <b>(Right)</b> This enables inference on unseen domains.
-        
-            </div>           
+            </p>
+            </div>
+            <center><img src="imgs/teaser.png" style="width: 75%;" class="centerImage"></center>        
+            <p class="bottom-three"></p>           
         </div>
 
         <div class="row mb-5">
-            <h3>PODA's qualitative results on unseen youtube videos</h3>
-            <div class="ratio ratio-16x9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/FCxgvNPX0yk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="text-center">Method</h3>
+            <div style="text-align: justify;">
+                <p class="col-md-8 mx-auto" style="text-align: justify;">
+                PØDA optimizes low-level feature channel's statistics, such that the cosine similarity between the targeted
+                representation matches the representation of the prompt describing the target domain.
+            </p>
+            </div>
+            <center><img src="imgs/method.png" style="width: 60%;" class="centerImage"></center>        
+            <p class="bottom-three"></p>
+                       
+        </div>
+        
+        <div class="row mb-5">
+            <h3 class="text-center">PØDA's qualitative results on unseen youtube videos</h3>
+            <div>
+                <center><img src="imgs/night_video.gif" style="width: 60%;" class="centerImage"></center> 
             </div>
         </div>   
         
+
+        <div class="row mb-5">
+            <h3 class="text-center">PØDA's qualitative results on some uncommon conditions</h3>
+            <center><img src="imgs/uncommon.png" style="width: 60%; height: 100%;" class="centerImage"></center>
+        </div>
+
         <div class="row mb-5">  
-            <h3>Citation</h3>   
-            <div>
+            <h3 class="text-center">Citation</h3>   
+            <div class="text-center">
                     If you find this project useful for your research, please cite
-                    <div class="card-block" style="background-color: #f5f5f5; padding:8px;">
-                        <!-- <div class="card-text" style="text-align: left;background-color: #f5f5f5;">                                                 -->
-<pre class="card-text" style="text-align: left;">
+                    <!-- div style="background-color: #f5f5f5; padding:8px;"> 
+                        <div class="card-text" style="text-align: center;background-color: #f5f5f5;">     -->
+<pre class="col-md-8 mx-auto" style="text-align: center;background-color: #f5f5f5;">
+    
 @article{fahes2022poda,
   title={P{\O}DA: Prompt-driven Zero-shot Domain Adaptation},
   author={Fahes, Mohammad and Vu, Tuan-Hung and Bursuc, Andrei and P{\'e}rez, Patrick and de Charette, Raoul},
   journal={arXiv},
-  year={2022}
-}
+  year={2022}}
 </pre>
 
                 </div>
@@ -134,8 +156,8 @@
         </div>
 
         <div class="row mb-5">
-            <h3>Acknowledgements</h3>
-            <div>This work was partially funded by French project SIGHT (ANR-20-CE23-0016).</div>
+            <h3 class="text-center">Acknowledgements</h3>
+            <div class="text-center">This work was partially funded by French project SIGHT (ANR-20-CE23-0016).</div>
         </div>
 
     </div>
