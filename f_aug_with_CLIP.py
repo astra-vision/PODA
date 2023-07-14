@@ -234,6 +234,9 @@ def main():
                 {'params': model_adain_1.parameters(), 'lr': 1},
             ], lr= 1, momentum=0.9, weight_decay=opts.weight_decay)
 
+            if i == len(train_loader)-1 and f1.shape[0] < opts.batch_size :
+                text_target = text_target[:f1.shape[0]]
+
             while cur_itrs< opts.total_it: 
 
                 cur_itrs += 1
