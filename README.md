@@ -50,6 +50,7 @@ Paper: https://arxiv.org/abs/2212.03241
 </p>
 
 # Table of Content
+- [News] (#news)
 - [Installation](#installation)
   - [Dependencies](#dependencies)
   - [Datasets](#datasets)
@@ -64,6 +65,9 @@ Paper: https://arxiv.org/abs/2212.03241
 - [PØDA for Object Detection](#pØda-for-object-detection)
 - [License](#license)
 - [Acknowledgement](#acknowledgement)
+
+# News
+* 14/07/2023: PODA is accepted at ICCV 2023. Camera-ready version with improved results and code's update are coming soon.
 
 # Installation
 ## Dependencies
