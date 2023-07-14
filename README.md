@@ -50,7 +50,7 @@ Paper: https://arxiv.org/abs/2212.03241
 </p>
 
 # Table of Content
-- [News] (#news)
+- [News](#news)
 - [Installation](#installation)
   - [Dependencies](#dependencies)
   - [Datasets](#datasets)
