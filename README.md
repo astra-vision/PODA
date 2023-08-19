@@ -27,7 +27,7 @@ Paper: https://arxiv.org/abs/2212.03241
   <b>Overview of PØDA</b>
 </p>
 <p align="center">
-  <img src="./images/teaser.pdf/" style="width:100%"/>
+  <img src="./images/teaser.png/" style="width:100%"/>
 </p>
 
 # Method
@@ -35,7 +35,7 @@ Paper: https://arxiv.org/abs/2212.03241
   <b>We propose Prompt-driven Instance Normalization (PIN) to augment feature styles based on "feature/target domain description" similarity</b>
 </p>
 <p align="center">
-  <img src="./images/method.pdf/" style="width:80%"/>
+  <img src="./images/method.png/" style="width:80%"/>
 </p>
 
 # Teaser
