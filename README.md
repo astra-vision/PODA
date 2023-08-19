@@ -122,7 +122,7 @@ python3 main.py \
 
 ## Feature optimization
 ```
-python3 f_aug_with_CLIP.py \
+python3 PIN_aug.py \
 --dataset <source_dataset> \
 --data_root <path_to_source_dataset> \
 --total_it 100 \

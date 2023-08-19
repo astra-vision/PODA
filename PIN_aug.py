@@ -145,9 +145,9 @@ def get_argparser():
 
 
 
-class ADAIN(nn.Module):
+class PIN(nn.Module):
     def __init__(self,shape,content_feat):
-        super(ADAIN,self).__init__()
+        super(PIN,self).__init__()
         self.shape = shape
         self.content_feat = content_feat.clone().detach()
         self.content_mean, self.content_std = calc_mean_std(self.content_feat)
@@ -226,12 +226,12 @@ def main():
             trunc3=False,trunc4=False,get1=True,get2=False,get3=False,get4=False)  # (B,C1,H1,W1)
             
             #optimize mu and sigma of target features with CLIP
-            model_adain_1 = ADAIN([f1.shape[0],256,1,1],f1.to(device)) #  mu_T (B,C1)  sigma_T(B,C1)
-            model_adain_1.to(device)
+            model_pin_1 = PIN([f1.shape[0],256,1,1],f1.to(device)) #  mu_T (B,C1)  sigma_T(B,C1)
+            model_pin_1.to(device)
 
 
-            optimizer_adain_1 = torch.optim.SGD(params=[
-                {'params': model_adain_1.parameters(), 'lr': 1},
+            optimizer_pin_1 = torch.optim.SGD(params=[
+                {'params': model_pin_1.parameters(), 'lr': 1},
             ], lr= 1, momentum=0.9, weight_decay=opts.weight_decay)
 
             if i == len(train_loader)-1 and f1.shape[0] < opts.batch_size :
@@ -243,9 +243,9 @@ def main():
                 if cur_itrs % opts.total_it==0:
                     print(cur_itrs)
 
-                optimizer_adain_1.zero_grad()
+                optimizer_pin_1.zero_grad()
             
-                f1_hal = model_adain_1()
+                f1_hal = model_pin_1()
                 f1_hal_trans = t1(f1_hal)
 
                 #target_features (optimized)
@@ -259,11 +259,11 @@ def main():
                
                 loss_CLIP1.backward(retain_graph=True)
               
-                optimizer_adain_1.step()
+                optimizer_pin_1.step()
         
             cur_itrs = 0
             
-            for name, param in model_adain_1.named_parameters():
+            for name, param in model_pin_1.named_parameters():
                 if param.requires_grad and name == 'style_mean':
                     learnt_mu_f1 = param.data
                 elif param.requires_grad and name == 'style_std':
