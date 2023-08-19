@@ -15,7 +15,7 @@ Paper: https://arxiv.org/abs/2212.03241
 
 ## Citation
 ```
-@article{fahes2023poda,
+@InProceedings{fahes2023poda,
   title={P{\O}DA: Prompt-driven Zero-shot Domain Adaptation},
   author={Fahes, Mohammad and Vu, Tuan-Hung and Bursuc, Andrei and P{\'e}rez, Patrick and de Charette, Raoul},
   booktitle={ICCV},
