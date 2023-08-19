@@ -256,7 +256,7 @@ def main():
         (opts.dataset, len(train_dst), len(val_dst)))
 
     # Set up model
-    model = network.modeling.__dict__[opts.model](num_classes=19, BB= opts.BB)
+    model = network.modeling.__dict__[opts.model](num_classes=19, BB= opts.BB,replace_stride_with_dilation=[False,False,True])
     model.backbone.attnpool = nn.Identity()
 
     #fix the backbone

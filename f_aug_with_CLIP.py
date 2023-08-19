@@ -192,7 +192,7 @@ def main():
     print("Dataset: %s, Train set: %d, Val set: %d" %
         (opts.dataset, len(train_dst), len(val_dst)))
 
-    model = network.modeling.__dict__[opts.model](num_classes=19,BB= opts.BB)
+    model = network.modeling.__dict__[opts.model](num_classes=19,BB= opts.BB,replace_stride_with_dilation=[False,False,False])
 
     for p in model.backbone.parameters():
         p.requires_grad = False

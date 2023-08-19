@@ -1,4 +1,4 @@
-# PØDA: Prompt-driven Zero-shot Domain Adaptation
+# PODA: Prompt-driven Zero-shot Domain Adaptation
 [Mohammad Fahes<sup>1</sup>](https://mfahes.github.io/),
 [Tuan-Hung Vu<sup>1,2</sup>](https://tuanhungvu.github.io/),
 [Andrei Bursuc<sup>1,2</sup>](https://abursuc.github.io/),
@@ -15,11 +15,11 @@ Paper: https://arxiv.org/abs/2212.03241
 
 ## Citation
 ```
-@article{fahes2022poda,
+@article{fahes2023poda,
   title={P{\O}DA: Prompt-driven Zero-shot Domain Adaptation},
   author={Fahes, Mohammad and Vu, Tuan-Hung and Bursuc, Andrei and P{\'e}rez, Patrick and de Charette, Raoul},
-  journal={arXiv preprint arXiv:2212.03241},
-  year={2022}
+  booktitle={ICCV},
+  year={2023}
 }
 ```
 # Overview
@@ -27,15 +27,15 @@ Paper: https://arxiv.org/abs/2212.03241
   <b>Overview of PØDA</b>
 </p>
 <p align="center">
-  <img src="./images/teaser.png/" style="width:100%"/>
+  <img src="./images/teaser.pdf/" style="width:100%"/>
 </p>
 
 # Method
 <p align="center">
-  <b>Optimizing AdaIN layer based on "feature/target domain description" similarity</b>
+  <b>We propose Prompt-driven Instance Normalization (PIN) to augment feature styles based on "feature/target domain description" similarity</b>
 </p>
 <p align="center">
-  <img src="./images/method.png/" style="width:80%"/>
+  <img src="./images/method.pdf/" style="width:80%"/>
 </p>
 
 # Teaser
@@ -54,15 +54,14 @@ Paper: https://arxiv.org/abs/2212.03241
 - [Installation](#installation)
   - [Dependencies](#dependencies)
   - [Datasets](#datasets)
-  - [Pretrained models](#pretrained-models)
-- [Running PØDA](#running-pØda)
+- [Running PODA](#running-poda)
   - [Source training](#source-training)
   - [Feature optimization](#feature-optimization)
   - [Model adaptation](#model-adaptation)
   - [Evaluation](#evaluation)
 - [Inference & Visualization](#inference--visualization)
 - [Qualitative Results](#qualitative-results)
-- [PØDA for Object Detection](#pØda-for-object-detection)
+- [PODA for Object Detection](#poda-for-object-detection)
 - [License](#license)
 - [Acknowledgement](#acknowledgement)
 
@@ -106,10 +105,7 @@ conda activate poda_env
   └── labels/                   % semantic segmentation labels
   ```
 
-## Pretrained models
-The source-only pretrained models are available [here](https://drive.google.com/drive/folders/15-NhVItiVbplg_If3HJibokJssu1NoxL?usp=share_link)
-
-# Running PØDA
+# Running PODA
 
 ## Source training
 ```
@@ -141,8 +137,8 @@ python3 main.py \
 --dataset <source_dataset> \
 --data_root <path_to_source_dataset> \
 --ckpt <path_to_source_checkpoint> \
---batch_size 16 \
---lr 0.001 \
+--batch_size 8 \
+--lr 0.01 \
 --ckpts_path adapted \
 --freeze_BB \
 --train_aug \
@@ -177,8 +173,8 @@ python3 predict.py \
   <img src="./images/uncommon.png/" style="width:75%"/>
 </p>
 
-# PØDA for Object Detection
-Our feature augmentation is task-agnostic, as it operates on the feature extractor's level. We show some preliminary results of PØDA for object detection. The metric is mAP%
+# PODA for Object Detection
+Our feature augmentation is task-agnostic, as it operates on the feature extractor's level. We show some results of PØDA for object detection. The metric is mAP%
 <p align="center">
   <img src="./images/PODA_for_OD.png/" style="width:75%"/>
 </p>
@@ -187,8 +183,8 @@ Our feature augmentation is task-agnostic, as it operates on the feature extract
 PØDA is released under the [Apache 2.0 license](./LICENSE).
 
 # Acknowledgement
-The code is based on this implementation of [DeepLabv3+](https://github.com/VainF/DeepLabV3Plus-Pytorch), and uses code from [CLIP](https://github.com/mfahes/CLIP)
+The code heavily borrows from this implementation of [DeepLabv3+](https://github.com/VainF/DeepLabV3Plus-Pytorch), and uses code from [CLIP](https://github.com/openai/CLIP)
 
 ---
 
-[↑ back to top](#pØda-prompt-driven-zero-shot-domain-adaptation)
+[↑ back to top](#poda-prompt-driven-zero-shot-domain-adaptation)

@@ -3,7 +3,7 @@ from .backbone import resnet_clip
 import os
 import torch
 
-def deeplabv3plus_resnet_clip(num_classes=19,BB = "RN50"):
+def deeplabv3plus_resnet_clip(num_classes=19,BB = "RN50",replace_stride_with_dilation=[False,False,True]):
     
     device = torch.device('cuda' if torch.cuda.is_available() else "cpu")
    
@@ -12,7 +12,7 @@ def deeplabv3plus_resnet_clip(num_classes=19,BB = "RN50"):
     model_path = resnet_clip._download(model_url, os.path.expanduser("~/.cache/clip"))
     with open(model_path, 'rb') as opened_file:
         backbone = torch.jit.load(opened_file, map_location="cpu").eval()
-        backbone = resnet_clip.build_model(backbone.state_dict()).to(device)
+        backbone = resnet_clip.build_model(backbone.state_dict(),replace_stride_with_dilation=replace_stride_with_dilation).to(device)
 
     inplanes = 2048
     low_level_planes = 256
