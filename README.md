@@ -54,6 +54,7 @@ Paper: https://arxiv.org/abs/2212.03241
 - [Installation](#installation)
   - [Dependencies](#dependencies)
   - [Datasets](#datasets)
+  - [Source models](#source-models)
 - [Running PODA](#running-poda)
   - [Source training](#source-training)
   - [Feature optimization](#feature-optimization)
@@ -66,7 +67,8 @@ Paper: https://arxiv.org/abs/2212.03241
 - [Acknowledgement](#acknowledgement)
 
 # News
-* 14/07/2023: PODA is accepted at ICCV 2023. Camera-ready version with improved results and code's update are coming soon.
+* 19/08/2023: Camera-ready version is on [arxiv](https://arxiv.org/pdf/2212.03241.pdf).
+* 14/07/2023: PODA is accepted at ICCV 2023.
 
 # Installation
 ## Dependencies
@@ -104,6 +106,8 @@ conda activate poda_env
   ├── images/                   % input image 
   └── labels/                   % semantic segmentation labels
   ```
+## Source models
+The source models are available [here](https://drive.google.com/drive/folders/15-NhVItiVbplg_If3HJibokJssu1NoxL?usp=sharing).
 
 # Running PODA
 
