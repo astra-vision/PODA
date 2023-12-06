@@ -67,6 +67,7 @@ Paper: https://arxiv.org/abs/2212.03241
 - [Acknowledgement](#acknowledgement)
 
 # News
+* 29/11/2023: Check out our recent work [A Simple Recipe for Language-guided Domain Generalized Segmentation](https://arxiv.org/pdf/2311.17922.pdf).
 * 19/08/2023: Camera-ready version is on [arxiv](https://arxiv.org/pdf/2212.03241.pdf).
 * 14/07/2023: PODA is accepted at ICCV 2023.
 
