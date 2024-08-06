@@ -54,15 +54,14 @@ PODA_root_dir
 │   │   └── annotations
 │   │       ├── instancesonly_filtered_gtFine_train.json
 │   │       └── instancesonly_filtered_gtFine_val.json
-│   └── target_domains
-│       ├── cityscapes_foggy
-│       │   └── val
-│       │       ├── frankfurt
-│       │       │   ├── frankfurt_000000_000294_leftImg8bit.png
-│       │       │   └── ...
-│       │       ├── lindau
-│       │       └── munster
-│       └── diverse_weather
+│   ├── cityscapes_foggy
+│   │   └── val
+│   │       ├── frankfurt
+│   │       │   ├── frankfurt_000000_000294_leftImg8bit.png
+│   │       │   └── ...
+│   │       ├── lindau
+│   │       └── munster
+│   └── diverse_weather
 │           ├── daytime_clear
 │           ├── Night-Sunny
 │           ├── night_rainy
