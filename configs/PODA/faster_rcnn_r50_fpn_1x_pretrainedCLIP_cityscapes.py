@@ -53,7 +53,7 @@ auto_scale_lr = dict(base_batch_size=8)
 ## override for testing
 dataset_type = 'CityscapesDataset'
 data_root = 'data/cityscapes/'
-data_root_target = 'data/target_domains/cityscapes_foggy/val/'
+data_root_target = 'data/cityscapes_foggy/val/'
 data = dict(
     samples_per_gpu=1,
     workers_per_gpu=2,
