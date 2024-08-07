@@ -104,3 +104,8 @@ venv.bak/
 .mypy_cache/
 .idea/
 
+# PODA
+data/
+work_dirs/
+checkpoints/
+augmented_feats/
