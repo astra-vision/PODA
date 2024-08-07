@@ -25,7 +25,7 @@ Paper: https://arxiv.org/abs/2212.03241
 
 # Getting started
 
-## Clone repository:
+## Clone repository
 
 ```bash
 git clone -b detection git@github.com:astra-vision/PODA.git
@@ -34,10 +34,10 @@ cd PODA
     
 ## Preparing the environment
 ```bash
+<PODA_root_dir>
 conda create -n podadet pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.7 -c pytorch -c nvidia
 conda activate podadet
 MMCV_WITH_OPS=1 FORCE_CUDA=1 pip install mmcv-full==1.7.0 -f https://download.openmmlab.com/mmcv/dist/cu117/torch1.13.0/index.html --no-cache-dir
-cd PODA
 FORCE_CUDA=1 pip install --no-cache-dir -e .
 ```
 
