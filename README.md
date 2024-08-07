@@ -124,4 +124,4 @@ python tools/test.py ./configs/PODA/faster_rcnn_r101_fpn_1x_pretrainedCLIP_diver
 PØDA is released under the [Apache 2.0 license](./LICENSE).
 
 # Acknowledgement
-The codebase heavily depends on the [mmdetection v2.28.2](https://github.com/open-mmlab/mmdetection) and uses code from [CLIP](https://github.com/openai/CLIP)
+The codebase heavily depends on the [mmdetection v2.28.2](https://github.com/open-mmlab/mmdetection/releases/tag/v2.28.2) and uses code from [CLIP](https://github.com/openai/CLIP)
