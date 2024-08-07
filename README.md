@@ -183,7 +183,7 @@ python3 predict.py \
 # PODA for Object Detection
 Our feature augmentation is task-agnostic, as it operates on the feature extractor's level. We show some results of PØDA for object detection. The metric is mAP%
 
-![08/07/2024] For the Night-Clear and Day-Foggy results, we corrected the evaluation bug from the original paper where the test split was mistakenly used instead of the train split for testing.
+❗❗❗ [08/07/2024] For the Night-Clear and Day-Foggy results, we corrected the evaluation bug from the original paper where the test split was mistakenly used instead of the train split for testing.
 
 <p align="center">
   <img src="./images/PODA_for_OD.png/" style="width:75%"/>
