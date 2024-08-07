@@ -80,9 +80,13 @@ PODA_root_dir
 │   ├── OD_aug_iccv
 │   └── fog_f1_templates_100it
 ├── checkpoints
+│   ├── clip_visual_encoder_resnet50.pth
+│   └── ...
 ├── ...
 └── work_dirs
 │   ├── faster_rcnn_r50_fpn_1x_pretrainedCLIP_cityscapes
+│   │   └── latest.pth
+│   │   
 │   ├── faster_rcnn_r50_fpn_1x_pretrainedCLIP_cityscapes_PODA_fog
 │   ├── faster_rcnn_r101_fpn_1x_pretrainedCLIP_diverseweather_dayclearnew_lr4e-3
 │   ├── faster_rcnn_r101_fpn_1x_pretrainedCLIP_diverseweather_dayclearnew_lr4e-3_srconly_lr4e-4_finetuneCLIP
@@ -99,7 +103,7 @@ PODA_root_dir
 # src-only
 python tools/train.py ./configs/PODA/faster_rcnn_r50_fpn_1x_pretrainedCLIP_cityscapes.py --auto-scale-lr
 
-# .. then train with PODA's augmented features
+# .. then train with PODA's augmented features of fog
 python tools/train.py ./configs/PODA/faster_rcnn_r50_fpn_1x_pretrainedCLIP_cityscapes_PODA_fog.py --auto-scale-lr
 
 # test on Cityscapes-Foggy
