@@ -1,4 +1,4 @@
-🔥[08/07/2024]🚀 the detection of PODA was release in the [detection branch](https://github.com/astra-vision/PODA/tree/detection)
+🔥[08/07/2024]🚀 the detection code of PODA was release in the [detection branch](https://github.com/astra-vision/PODA/tree/detection)
 
 # PODA: Prompt-driven Zero-shot Domain Adaptation
 [Mohammad Fahes<sup>1</sup>](https://mfahes.github.io/),
