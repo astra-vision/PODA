@@ -124,6 +124,16 @@ python tools/test.py ./configs/PODA/faster_rcnn_r101_fpn_1x_pretrainedCLIP_diver
 
 ```
 
+### Results
+We show some results of PØDA for object detection. The metric is mAP%.
+
+![08/07/2024] For the Night-Clear and Day-Foggy results, we corrected the evaluation bug from the original paper where the test split was mistakenly used instead of the train split for testing
+
+<p align="center">
+  <img src="./images/PODA_for_OD.png/" style="width:75%"/>
+</p>
+
+
 # License
 PØDA is released under the [Apache 2.0 license](./LICENSE).
 
