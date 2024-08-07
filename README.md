@@ -42,7 +42,7 @@ FORCE_CUDA=1 pip install --no-cache-dir -e .
 ```
 
 ## Preparing datasets
-Download and organize Cityscapes, Cityscapes Foggy and Diverse Weather Dataset in the following structure:
+Download and organize [Cityscapes](https://www.cityscapes-dataset.com/), [Cityscapes Foggy](https://people.ee.ethz.ch/~csakarid/SFSU_synthetic/) (attenuation coefficient of 0.02m-1) and [Diverse Weather Dataset](https://drive.google.com/drive/folders/1IIUnUrJrvFgPzU8D6KtV0CXa8k1eBV9B) in the following structure:
 
 ```bash
 PODA_root_dir
