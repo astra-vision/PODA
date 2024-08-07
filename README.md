@@ -1,4 +1,4 @@
-# PODA (OBJECT DETECTION): Prompt-driven Zero-shot Domain Adaptation
+# PODA (OBJECT DETECTION 🔥): Prompt-driven Zero-shot Domain Adaptation
 [Mohammad Fahes<sup>1</sup>](https://mfahes.github.io/),
 [Tuan-Hung Vu<sup>1,2</sup>](https://tuanhungvu.github.io/),
 [Andrei Bursuc<sup>1,2</sup>](https://abursuc.github.io/),
@@ -127,7 +127,7 @@ python tools/test.py ./configs/PODA/faster_rcnn_r101_fpn_1x_pretrainedCLIP_diver
 ### Results
 We show some results of PØDA for object detection. The metric is mAP%.
 
-![08/07/2024] For the Night-Clear and Day-Foggy results, we corrected the evaluation bug from the original paper where the test split was mistakenly used instead of the train split for testing
+![08/07/2024] For the Night-Clear and Day-Foggy results, we corrected the evaluation bug from the original paper where the test split was mistakenly used instead of the train split for testing.
 
 <p align="center">
   <img src="./images/PODA_for_OD.png/" style="width:75%"/>
