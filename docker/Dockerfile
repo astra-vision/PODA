@@ -1,29 +1,61 @@
-ARG PYTORCH="1.6.0"
-ARG CUDA="10.1"
-ARG CUDNN="7"
+# Use the official PyTorch image with CUDA 11.3
+FROM nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
 
-FROM pytorch/pytorch:${PYTORCH}-cuda${CUDA}-cudnn${CUDNN}-devel
+# Set environment variables
+ENV DEBIAN_FRONTEND=noninteractive
+ENV CUDA_HOME=/usr/local/cuda
+ENV NVCC=/usr/local/cuda/bin/nvcc
 
-ENV TORCH_CUDA_ARCH_LIST="6.0 6.1 7.0+PTX"
-ENV TORCH_NVCC_FLAGS="-Xfatbin -compress-all"
-ENV CMAKE_PREFIX_PATH="$(dirname $(which conda))/../"
-
-# To fix GPG key error when running apt-get update
-RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
-RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub
-
-RUN apt-get update && apt-get install -y ffmpeg libsm6 libxext6 git ninja-build libglib2.0-0 libsm6 libxrender-dev libxext6 \
-    && apt-get clean \
+# Install basic dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3.10 \
+    gcc-9 \
+    g++-9 \
+    git \
+    wget \
+    curl \
+    ca-certificates \
+    libopencv-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install MMCV
-RUN pip install --no-cache-dir --upgrade pip wheel setuptools
-RUN pip install --no-cache-dir mmcv-full==1.3.17 -f https://download.openmmlab.com/mmcv/dist/cu101/torch1.6.0/index.html
+# Set gcc/g++ to use version 9
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100 \
+    && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 100
 
-# Install MMDetection
-RUN conda clean --all
-RUN git clone https://github.com/open-mmlab/mmdetection.git /mmdetection
-WORKDIR /mmdetection
-ENV FORCE_CUDA="1"
-RUN pip install --no-cache-dir -r requirements/build.txt
-RUN pip install --no-cache-dir -e .
+# Install pip
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    software-properties-common \
+    && add-apt-repository ppa:deadsnakes/ppa \
+    && apt-get update && apt-get install -y --no-install-recommends \
+    python3.10 \
+    python3.10-venv \
+    python3.10-dev \
+    python3.10-distutils \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py \
+    && python3.10 /tmp/get-pip.py \
+    && rm /tmp/get-pip.py
+
+# Install PyTorch with CUDA 11.3 and related dependencies
+RUN pip uninstall -y numpy
+RUN pip install numpy==1.26.1
+RUN pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+
+# Install OpenCV
+RUN pip install opencv-python
+
+# Install MMCV and MMDetection
+RUN pip install mmcv-full==1.6.0 -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.11.0/index.html
+
+# Set Python 3.10 as the default python
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+
+# Verify the installation
+RUN python3 --version && \
+    gcc --version && \
+    nvcc --version && \
+    python3 -c "import torch; print(torch.cuda.is_available())" && \
+    python3 -c "import mmcv; print(mmcv.__version__)" && \
+    python3 -c "import cv2; print(cv2.__version__)"
