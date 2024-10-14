@@ -33,6 +33,10 @@ cd PODA
 ```
     
 ## Preparing the environment
+
+It is recommended to use the given docker/Dockerfile to properly set-up working environment.
+Optionally, one can use conda as below.
+
 ```bash
 <PODA_root_dir>
 conda create -n podadet pytorch==1.11.0 torchvision==0.12.0 pytorch-cuda=11.3 -c pytorch -c nvidia
