@@ -34,7 +34,7 @@ cd PODA
     
 ## Preparing the environment
 
-It is recommended to use the given docker/Dockerfile to properly set-up working environment.
+It is recommended to use the given docker/Dockerfile to properly set-up the working environment.
 Optionally, one can use conda as below.
 
 ```bash
