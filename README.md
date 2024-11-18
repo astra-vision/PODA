@@ -67,8 +67,9 @@ Paper: https://arxiv.org/abs/2212.03241
 - [Acknowledgement](#acknowledgement)
 
 # News
-* 29/11/2023: Check out our recent work [A Simple Recipe for Language-guided Domain Generalized Segmentation](https://arxiv.org/pdf/2311.17922.pdf).
-* 19/08/2023: Camera-ready version is on [arxiv](https://arxiv.org/pdf/2212.03241.pdf).
+* 28/10/2024: Extension of PØDA [Domain Adaptation with a Single Vision-Language Embedding](https://arxiv.org/abs/2410.21361) in on arxiv.
+* 29/11/2023: Check out our recent CVPR 2024 work [A Simple Recipe for Language-guided Domain Generalized Segmentation](https://arxiv.org/abs/2311.17922), which builds upon PIN to achieve state-of-the-art in domain generalized segmentation.
+* 19/08/2023: Camera-ready version is on [arxiv](https://arxiv.org/abs/2212.03241).
 * 14/07/2023: PODA is accepted at ICCV 2023.
 
 # Installation
