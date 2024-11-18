@@ -1,3 +1,5 @@
+🔥[08/07/2024]🚀 the detection code of PODA was release in the [detection branch](https://github.com/astra-vision/PODA/tree/detection)
+
 # PODA: Prompt-driven Zero-shot Domain Adaptation
 [Mohammad Fahes<sup>1</sup>](https://mfahes.github.io/),
 [Tuan-Hung Vu<sup>1,2</sup>](https://tuanhungvu.github.io/),
@@ -181,6 +183,9 @@ python3 predict.py \
 
 # PODA for Object Detection
 Our feature augmentation is task-agnostic, as it operates on the feature extractor's level. We show some results of PØDA for object detection. The metric is mAP%
+
+❗❗❗ [08/07/2024] For the Night-Clear and Day-Foggy results, we corrected the evaluation bug from the original paper where the test split was mistakenly used instead of the train split for testing.
+
 <p align="center">
   <img src="./images/PODA_for_OD.png/" style="width:75%"/>
 </p>
