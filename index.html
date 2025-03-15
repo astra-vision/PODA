@@ -65,7 +65,7 @@
             </div>
         </div>
         
-        <div class="row mt-4">
+        <div class="row mt-4 mb-5">
             <div class="col-md-6 mx-auto">
                 <ul class="nav nav-justified">
                     <li class="nav-item">
@@ -83,7 +83,14 @@
                 </ul>
             </div>
         </div>
-        
+
+        <div class="row px-5 mb-5">
+            <!-- <h3 class="text-center">TL;DR</h3> -->
+            <p class="col-md-8 mx-auto" style="text-align: justify;">
+            <strong> TL;DR </strong>: We propose Prompt-driven Instance Normalization (PIN), an extremely simple style augmentation/mining method guided by a single text description. PIN is plug-and-play, and the resulting styles can be used to boost semantic segmentation, object detection, and image classification on unseen domains described by a single prompt.
+            </p>
+        </div>
+            
 
         <div class="row px-5 mb-5">
             <h3 class="text-center">Abstract</h3>
@@ -115,7 +122,7 @@
             <h3 class="text-center">Method</h3>
             <div style="text-align: justify;">
                 <p class="col-md-8 mx-auto" style="text-align: justify;">
-                PØDA optimizes low-level feature channel's statistics using a novel Prompt-driven Instance Normalization (PIN), such that the cosine similarity between the targeted representation matches the representation of the prompt describing the target domain.
+                PØDA optimizes low-level feature channel's statistics using a novel Prompt-driven Instance Normalization (PIN), such that the cosine similarity between the targeted representation matches the representation of the prompt describing the target domain. These optimized statistics are then applied to stylize the features, and the network is subsequently fine-tuned on them.
             </p>
             </div>
             <center><img src="imgs/method.png" style="width: 60%;" class="centerImage"></center>        
@@ -134,6 +141,14 @@
         <div class="row mb-5">
             <h3 class="text-center">PØDA's qualitative results on some uncommon conditions</h3>
             <center><img src="imgs/uncommon.png" style="width: 60%; height: 100%;" class="centerImage"></center>
+        </div>
+
+
+        <div class="row mb-5">
+            <h3 class="text-center">PØDA on Single-Domain Generalized Object Detection (Single-DGOD)</h3>
+            <center><img src="imgs/PODA_for_OD.png" style="width: 60%;" class="centerImage"></center>        
+            <p class="bottom-three"></p>
+                       
         </div>
 
         <div class="row mb-5">  
